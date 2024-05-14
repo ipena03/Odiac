@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{parent()}}Odiac{% endblock %}
+{% block body %}
+<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold"> ODIAC</h1>
+ <h2 class="text-center text-secondary mb-4 pb-4 display-2"> Shoppez comme vous l'imaginez </h2>
+ <h2 class="text-center"> <i class="bi bi-cloud-arrow-up-fill text-primary" ></i><i class="bi bifolder text-secondary"></i><i class="bi bi-cloud-arrow-down-fill text-warning"></i></h2>
+
+
+
+
+<!-- carousel --> 
+
+<h3>
+
+
+<br>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+   
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+ 
+  <div class="carousel-inner">
+
+
+
+
+
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/00_story.webp" alt="First slide">
+    </div>
+
+
+
+ 
+
+<div class="carousel-item">
+      <video class="img-fluid" autoplay loop muted>
+        <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
+      </video>
+
+
+
+  </div>
+
+
+ <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+</div>
+
+
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
