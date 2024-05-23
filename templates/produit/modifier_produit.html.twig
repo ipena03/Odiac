@@ -2,16 +2,15 @@
 
 {% block title %}
 
-{{parent()}}Modifier Produit
+	{{parent()}}Modifier Produit
 {% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
-        <h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">
-            Modifier Produit</h1>
-                {{form(form)}}
-    </div>
+	<div class="container-fluid">
+		<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">
+			Modifier Produit</h1>
+		{{form(form)}}
+		</div>
 
 
-
-{% endblock %}
+	{% endblock %}

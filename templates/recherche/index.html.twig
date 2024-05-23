@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent()}} Recherche {% endblock %}
+
+{% block body %}
+<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold"> resultat recherche de {{q}} </h1>
+
+{% if produit | length == 0 %}
+
+<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold"> desolez votre recherche n'a pas de resultat  </h1>
+
+{% else %}
+
+
+<div class="row justify-content-center pt-5">
+    <div>
+        <div class="card-group g-4 pt-4">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-4 pt-4">
+        {%for p in produit%}
+        <div class="col">
+        <div class="card bg transparent pb-4" style="border-radius :25px">
+        <div class="card body text-center" style="border-radius :30px">
+        <a href="{{path('app_page_produit',{'id':p.id})}}" data-placement="bottom" data-toggle="tooltip" title="Aller sur la page de {{p.nom}}">
+    	<img src="img/{{p.nom}}.jpg" class="card-img-top" alt="Image du jeu: {{p.nom}}" style="border-radius:30px">
+            </a>
+		</div>
+
+			{% if p.prix == 0 %}
+				<h6 class="card-footer text-center">GRATUIT</h6>
+			{% else %}
+				<h6 class="card-footer text-center">{{p.prix}} €</h6>
+			{% endif %}
+
+
+
+
+{#}
+
+
+ {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		{% if produit in app_aimer %}
+		<a class="btn btn-danger" href="{{path('app_aimer',{'id':p.id})}}" role="button" data-placement="bottom" data-toggle="tooltip" title="Supprimer des favoris">
+			<i class="bi bi-heart-fill" title="Mettre en favori"></i>
+		</a>
+		{% else %}
+			<a class="btn btn-danger" href="{{path('app_aimer',{'id':p.id})}}" role="button" data-placement="bottom" data-toggle="tooltip" title="Ajouter aux favoris">
+				i class="bi bi-heart" title="Mettre en favori"></i>
+			</a>
+		{% endif %}	
+
+
+{% endif %}
+
+{#}
+
+
+
+
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+
+
+{% endif %}
+
+
+{% endblock %}

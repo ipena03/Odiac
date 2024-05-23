@@ -2,34 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Produit;
+use App\Entity\Panier;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Produit>
+ * @extends ServiceEntityRepository<Panier>
  */
-class ProduitRepository extends ServiceEntityRepository
+class PanierRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Produit::class);
+        parent::__construct($registry, Panier::class);
     }
 
-
-    public function findBySearchQuery(string $query)
-    
-    {
-        return $this->createQueryBuilder("m")
-            ->where('m.nom Like :query')
-            ->setParameter('query','%'.$query.'%')
-            ->getQuery()
-            ->getResult();
-
-
-    }
     //    /**
-    //     * @return Produit[] Returns an array of Produit objects
+    //     * @return Panier[] Returns an array of Panier objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -43,7 +31,7 @@ class ProduitRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Produit
+    //    public function findOneBySomeField($value): ?Panier
     //    {
     //        return $this->createQueryBuilder('p')
     //            ->andWhere('p.exampleField = :val')

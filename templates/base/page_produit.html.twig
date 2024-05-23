@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{parent()}}produits
+{% endblock %}
+{% block body %}
+	<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">
+		produits
+	</h1>
+
+<h2 class="text-center ">
+	<img src="{{asset('img/'~ produit.nom ~ '.jpg')}}" class="img-responsive" alt=" {{produit.nom}}" style="width:250px;border-radius:40px">
+</h2>
+
+
+
+<h3 class="text-center">
+{{produit.nom}}
+
+</h3>
+
+
+
+
+	
+	<br>
+
+	<h4 class="text-center">
+{{produit.prix}}
+
+</h4>
+	
+
+<h4 class="text-center">
+{{produit.taille}}
+
+</h4>
+	
+
+
+	<h5 class="text-center">
+{{produit.description}}
+
+</h5>
+
+
+{% endblock %}
